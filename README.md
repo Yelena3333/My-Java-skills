@@ -4,13 +4,13 @@
 
 Task:
 
-Description
+Description:
 
 Use common OOP principles for creating a program which emulates phone number typing via virtual keyboard in a web browser.
 
 Note that it's not required to interact with a real browser. You should build a set of abstractions which reflects your programming skills.
 
-Prerequisites
+Prerequisites:
 
 Create a Browser interface which is similar to the following abstract class:
 
@@ -26,7 +26,8 @@ When you call a specific click implementation, the following message should be d
 Clicking //button[@class='key' and text()='X'] in a Y browser.
 
 Where X is an exact number clicked by user, Y is a name of a web browser encapsulated within specific implementation.
-Program's logic
+
+Program's logic:
 
 Create a constant to locate a virtual key on a web page: //button[@class='key' and text()='%s']
 

@@ -1,6 +1,6 @@
-package Waverley;
+package WPackage;
 
 public interface Browser {	
-	public void click();
+	public void click(String elementPath);
 	
 }

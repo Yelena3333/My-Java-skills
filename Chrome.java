@@ -1,4 +1,4 @@
-package Waverley;
+package WPackage;
 
 public class Chrome implements Browser {
 	

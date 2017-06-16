@@ -9,24 +9,8 @@ Description
 
 Use common OOP principles for creating a program which emulates phone number typing via virtual keyboard in a web browser.
 
-image
-
 Note that it's not required to interact with a real browser. You should build a set of abstractions which reflects your programming skills.
 
-Virtual keyboard has the following markup:
-
-<div class="vKeyboard">
-    <button class="key">1</button>
-    <button class="key">2</button>
-    <button class="key">3</button>
-    <button class="key">4</button>
-    <button class="key">5</button>
-    <button class="key">6</button>
-    <button class="key">7</button>
-    <button class="key">8</button>
-    <button class="key">9</button>
-    <button class="key">0</button>
-</div>>
 Prerequisites
 
 Create a Browser interface which is similar to the following abstract class:

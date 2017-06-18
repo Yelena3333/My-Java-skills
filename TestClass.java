@@ -1,4 +1,6 @@
 package WPackage;
+
+import java.util.ArrayList;
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class TestClass {	
@@ -22,37 +24,34 @@ public class TestClass {
 	  return wholeNumber;		
    }
 	
-   public void keysProcessing(String mobileNumber, String browserName) {
-	  String s1 = new String();	
-	  Browser testBrowser;		  
-		 
-	  System.out.println("For browser "+ browserName);	
+   public void keysProcessing(String mobileNumber, Browser currentBrowser) {
+	  String s1;	
+		  	
 	  mobileNumber = mobileNumber.replaceAll("\\D","");	  	
 	  String[] phoneDigits = mobileNumber.split("");	
-	  	  
-	  if (browserName=="Chrome"){			  
-		testBrowser = new Chrome(); 
-	  }
-	  else {
-		testBrowser = new Firefox();
-	  }       
-		  		 
+			 		 
       for (int i = 0; i < mobileNumber.length(); i++){	    	  
 		s1=String.format(VIRTUAL_KEY, phoneDigits[i]);
-		testBrowser.click(s1);
+		currentBrowser.click(s1);
 	  }		
    }
 	
    public static void main(String[] args) {
 	  String phoneNumber;	  
-	  String[] browserList = {"Chrome", "Firefox"};
+	  ArrayList<Browser> browserList = new ArrayList<Browser>();
+	  Browser testBrowser;		  
+		 
+	  testBrowser = new Chrome(); 
+	  browserList.add(0, testBrowser);
+	  testBrowser = new Firefox();
+	  browserList.add(1, testBrowser);
 	  
 	  System.out.println("Start programm...");	  
 	  TestClass test = new TestClass();
 	  
 	  phoneNumber = test.helper();
-	  test.keysProcessing(phoneNumber, browserList[0]);
+	  test.keysProcessing(phoneNumber, browserList.get(0));
 	  phoneNumber = test.helper();
-	  test.keysProcessing(phoneNumber, browserList[1]);	    
+	  test.keysProcessing(phoneNumber, browserList.get(1));	    
    }
 }

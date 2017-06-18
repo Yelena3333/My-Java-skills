@@ -49,9 +49,9 @@ public class TestClass {
 	  System.out.println("Start programm...");	  
 	  TestClass test = new TestClass();
 	  
-	  phoneNumber = test.helper();
-	  test.keysProcessing(phoneNumber, browserList.get(0));
-	  phoneNumber = test.helper();
-	  test.keysProcessing(phoneNumber, browserList.get(1));	    
+	  for (int i = 0; i < browserList.size(); i++){
+	    phoneNumber = test.helper();
+	  test.keysProcessing(phoneNumber, browserList.get(i));
+	  }	   
    }
 }

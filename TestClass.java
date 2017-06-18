@@ -3,60 +3,56 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 public class TestClass {	
 	
-   public static final String vkey = "//button[@class='key' and text()='%s']";
+   public static final String virtualKey = "//button[@class='key' and text()='%s']";
    	
    public String helper() {
-	  String key = "";
-	  String number = "";
-	  String country_code = "";
-	  String operator_code = "";
-	  String mobile = "";
-	  String whole_number = "";
-		
+	  String key, countryCode, operatorCode, mobile, wholeNumber, number;
+	  
+	  number = "";
 	  for (int i = 0; i < 11; i++){ 
 		key= RandomStringUtils.randomNumeric(1);		
 		number = number + key;	
 	  }
 		
-	  country_code=number.substring(0,1);
-	  operator_code=number.substring(1,4);
+	  countryCode=number.substring(0,1);
+	  operatorCode=number.substring(1,4);
 	  mobile=number.substring(4);		
-	  whole_number=String.format("[%s][%s][%s]", country_code, operator_code, mobile);
-	  System.out.println("A random phone number is "+ whole_number);
-	  return whole_number;		
+	  wholeNumber=String.format("[%s][%s][%s]", countryCode, operatorCode, mobile);
+	  System.out.println("A random phone number is "+ wholeNumber);
+	  return wholeNumber;		
    }
 	
-   public void keyProcessing(String mobile_number, String browser_name) {
+   public void keysProcessing(String mobileNumber, String browserName) {
 	  String s1 = new String();	
-	  Browser testbrowser;			  
+	  Browser testBrowser;		  
 		 
-	  System.out.println("For browser "+ browser_name);	
-	  mobile_number = mobile_number.replaceAll("\\D","");	  	
-	  String[] phone_digits = mobile_number.split("");	
+	  System.out.println("For browser "+ browserName);	
+	  mobileNumber = mobileNumber.replaceAll("\\D","");	  	
+	  String[] phoneDigits = mobileNumber.split("");	
 	  	  
-	  if (browser_name=="Chrome"){			  
-		testbrowser = new Chrome(); 
+	  if (browserName=="Chrome"){			  
+		testBrowser = new Chrome(); 
 	  }
 	  else {
-		testbrowser = new Firefox();
+		testBrowser = new Firefox();
 	  }       
 		  		 
-      for (int i = 0; i < mobile_number.length(); i++){	    	  
-		s1=String.format(vkey, phone_digits[i]);
-		testbrowser.click(s1);
+      for (int i = 0; i < mobileNumber.length(); i++){	    	  
+		s1=String.format(virtualKey, phoneDigits[i]);
+		testBrowser.click(s1);
 	  }		
    }
 	
    public static void main(String[] args) {
-	  String phone_number;	  
-	  String[] browser_list = {"Chrome", "Firefox"};
+	  String phoneNumber;	  
+	  String[] browserList = {"Chrome", "Firefox"};
 	  
 	  System.out.println("Start programm...");	  
 	  TestClass test = new TestClass();
 	  
-	  phone_number = test.helper();
-	  test.keyProcessing(phone_number, browser_list[0]);
-	  phone_number = test.helper();
-	  test.keyProcessing(phone_number, browser_list[1]);	    
+	  phoneNumber = test.helper();
+	  test.keysProcessing(phoneNumber, browserList[0]);
+	  phoneNumber = test.helper();
+	  test.keysProcessing(phoneNumber, browserList[1]);	    
    }
 }

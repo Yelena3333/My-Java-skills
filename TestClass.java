@@ -51,7 +51,7 @@ public class TestClass {
 	  
 	  for (int i = 0; i < browserList.size(); i++){
 	    phoneNumber = test.helper();
-	  test.keysProcessing(phoneNumber, browserList.get(i));
+	    test.keysProcessing(phoneNumber, browserList.get(i));
 	  }	   
    }
 }

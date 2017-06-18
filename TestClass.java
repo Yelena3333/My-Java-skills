@@ -28,8 +28,8 @@ public class TestClass {
 	  String s1;	
 		  	
 	  mobileNumber = mobileNumber.replaceAll("\\D","");	  	
-	  String[] phoneDigits = mobileNumber.split("");	
-			 		 
+	  String[] phoneDigits = mobileNumber.split("");
+	  
       for (int i = 0; i < mobileNumber.length(); i++){	    	  
 		s1=String.format(VIRTUAL_KEY, phoneDigits[i]);
 		currentBrowser.click(s1);

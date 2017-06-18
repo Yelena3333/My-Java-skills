@@ -3,7 +3,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 public class TestClass {	
 	
-   public static final String virtualKey = "//button[@class='key' and text()='%s']";
+   public static final String VIRTUAL_KEY = "//button[@class='key' and text()='%s']";
    	
    public String helper() {
 	  String key, countryCode, operatorCode, mobile, wholeNumber, number;
@@ -38,7 +38,7 @@ public class TestClass {
 	  }       
 		  		 
       for (int i = 0; i < mobileNumber.length(); i++){	    	  
-		s1=String.format(virtualKey, phoneDigits[i]);
+		s1=String.format(VIRTUAL_KEY, phoneDigits[i]);
 		testBrowser.click(s1);
 	  }		
    }

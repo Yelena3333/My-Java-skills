@@ -1,6 +1,4 @@
-# My-tech-skills
-
-Java:
+# My-Java-skills
 
 Task:
 
